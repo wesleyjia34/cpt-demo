@@ -1,7 +1,6 @@
 def looper(iter_count: int):
     for i in range(iter_count):
-        i + 5
-        i + 3
-        i + 2
+        for i in range(10):
+            i + 5
     return i + 1
     
