@@ -1,0 +1,32 @@
+name: Continuous Performance Benchmarking
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  deployments: write
+
+jobs:
+  benchmark:
+    name: Performance regression check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+      - name: Run benchmark
+        run: |
+          pip install -r requirements.txt
+          pytest -k 'benchmark' --benchmark-json benchmark_output.json
+      - name: Store benchmark result
+        uses: benchmark-action/github-action-benchmark@v1
+        with:
+          tool: 'pytest'
+          output-file-path: benchmark_output.json
+          alert-threshold: 200%
+          fail-on-alert: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
+
+        
