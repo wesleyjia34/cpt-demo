@@ -1,6 +1,5 @@
 def looper(iter_count: int):
     for i in range(iter_count):
-        for i in range(25):
-            i + 5
+        pass
     return i + 1
     
