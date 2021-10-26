@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1635211431121,
+  "lastUpdate": 1635211687288,
   "repoUrl": "https://github.com/wesleyjia34/cpt-demo",
   "entries": {
     "Benchmark": [
@@ -231,6 +231,44 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 2.99867747075706e-7",
             "extra": "mean: 1.4553355753290733 usec\nrounds: 175439"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "wesley.jia@placeexchange.com",
+            "name": "Wesley Jia",
+            "username": "wesleyjia34"
+          },
+          "committer": {
+            "email": "wesley.jia@placeexchange.com",
+            "name": "Wesley Jia",
+            "username": "wesleyjia34"
+          },
+          "distinct": true,
+          "id": "4e36d746b4ff8aac7bb366aaa67a11fc85431eb8",
+          "message": "introduce another real perf degradation",
+          "timestamp": "2021-10-25T21:27:32-04:00",
+          "tree_id": "d2b1e77ab3a52543f0344ee8e62b36349ee54408",
+          "url": "https://github.com/wesleyjia34/cpt-demo/commit/4e36d746b4ff8aac7bb366aaa67a11fc85431eb8"
+        },
+        "date": 1635211685041,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "src/demo/tests/test_utils.py::test_benchmark_looper_time",
+            "value": 1.6414142169357762,
+            "unit": "iter/sec",
+            "range": "stddev: 0.006144918864515346",
+            "extra": "mean: 609.2307411999997 msec\nrounds: 5"
+          },
+          {
+            "name": "src/demo/tests/test_utils.py::test_benchmark_reduce_fib_nums_time",
+            "value": 196998.15726494286,
+            "unit": "iter/sec",
+            "range": "stddev: 0.000007571689544653361",
+            "extra": "mean: 5.07618961458152 usec\nrounds: 91744"
           }
         ]
       }
