@@ -8,5 +8,5 @@ def looper(iter_count: int) -> int:
     
 def reduce_fibonacci_nums() -> int:
     
-    fib_num_count = 10
+    fib_num_count = 11
     return reduce(lambda x, y: x + y, range(fib_num_count))
