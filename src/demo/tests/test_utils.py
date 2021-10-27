@@ -1,4 +1,4 @@
-from ..utils import looper, reduce_fibonacci_nums
+from ..utils import looper, sum_incrementing_ints
 
 def test_looper_returns_iter_count():
     input_iters = 1000000
@@ -8,5 +8,5 @@ def test_looper_returns_iter_count():
 def test_benchmark_looper_time(benchmark):
     benchmark(looper, 1000000)
 
-def test_benchmark_reduce_fib_nums_time(benchmark):
-    benchmark(reduce_fibonacci_nums)
+def test_benchmark_sum_ints_time(benchmark):
+    benchmark(sum_incrementing_ints)
