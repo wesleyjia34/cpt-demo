@@ -6,7 +6,8 @@ def looper(iter_count: int) -> int:
             i
     return i + 1
     
-def reduce_fibonacci_nums() -> int:
+def sum_incrementing_ints() -> int:
     
-    fib_num_count = 50
-    return reduce(lambda x, y: x + y, range(fib_num_count))
+    max_int = 10
+    return reduce(lambda x, y: x + y, range(1, max_int + 1))
+g
