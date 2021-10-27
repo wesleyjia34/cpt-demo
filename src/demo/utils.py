@@ -8,6 +8,6 @@ def looper(iter_count: int) -> int:
     
 def sum_incrementing_ints() -> int:
     
-    max_int = 10
+    max_int = 50
     return reduce(lambda x, y: x + y, range(1, max_int + 1))
 g
