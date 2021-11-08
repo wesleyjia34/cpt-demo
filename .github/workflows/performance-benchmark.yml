@@ -29,6 +29,6 @@ jobs:
           comment-on-alert: true
           alert-comment-cc-users: '@wesleyjia34'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          auto-push: true
+          auto-push: false
 
         
