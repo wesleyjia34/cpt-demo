@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1636415154491,
+  "lastUpdate": 1636415275573,
   "repoUrl": "https://github.com/wesleyjia34/cpt-demo",
   "entries": {
     "Benchmark": [
@@ -455,6 +455,44 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 7.248103346682413e-7",
             "extra": "mean: 17.597414065694366 usec\nrounds: 46297"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "wesley.jia@placeexchange.com",
+            "name": "Wesley Jia",
+            "username": "wesleyjia34"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8e93bced8170151c474f473406edbbb12ff164a9",
+          "message": "Merge pull request #1 from wesleyjia34/new-feat\n\nintroduce degradation",
+          "timestamp": "2021-11-08T17:47:26-06:00",
+          "tree_id": "78d7484eaa1302d0ee7449005565ff41a5b3b0dc",
+          "url": "https://github.com/wesleyjia34/cpt-demo/commit/8e93bced8170151c474f473406edbbb12ff164a9"
+        },
+        "date": 1636415274579,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "src/demo/tests/test_utils.py::test_benchmark_looper_time",
+            "value": 1.7130205311591897,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00016620424516666863",
+            "extra": "mean: 583.7641649999995 msec\nrounds: 5"
+          },
+          {
+            "name": "src/demo/tests/test_utils.py::test_benchmark_sum_ints_time",
+            "value": 56729.06577353543,
+            "unit": "iter/sec",
+            "range": "stddev: 7.443335971153677e-7",
+            "extra": "mean: 17.627647950206647 usec\nrounds: 40321"
           }
         ]
       }
