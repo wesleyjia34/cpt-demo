@@ -41,7 +41,7 @@ jobs:
           auto-push: false
       - name: Push benchmark results
         if: ${{ env.is_push_on_master }}
-        run: git push 'https://wesleyjia34:${{ secrets.GITHUB_TOKEN }}@github.com/wesleyjia34/cpt-demo.git gh-pages:gh-pages
+        run: git push 'https://wesleyjia34:${{ secrets.GITHUB_TOKEN }}@github.com/wesleyjia34/cpt-demo.git' gh-pages:gh-pages
 
 
         
