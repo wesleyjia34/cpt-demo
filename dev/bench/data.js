@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1636414765646,
+  "lastUpdate": 1636415154491,
   "repoUrl": "https://github.com/wesleyjia34/cpt-demo",
   "entries": {
     "Benchmark": [
@@ -421,6 +421,40 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.000018785850277545882",
             "extra": "mean: 19.302901858250394 usec\nrounds: 41491"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "wesleyjia34",
+            "username": "wesleyjia34"
+          },
+          "committer": {
+            "name": "wesleyjia34",
+            "username": "wesleyjia34"
+          },
+          "id": "48326f5f803aec70dc7d60570db3040ceb32cf39",
+          "message": "introduce degradation",
+          "timestamp": "2021-11-08T23:39:00Z",
+          "url": "https://github.com/wesleyjia34/cpt-demo/pull/1/commits/48326f5f803aec70dc7d60570db3040ceb32cf39"
+        },
+        "date": 1636415153725,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "src/demo/tests/test_utils.py::test_benchmark_looper_time",
+            "value": 1.7059871472559287,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00017413066668529105",
+            "extra": "mean: 586.1708873999987 msec\nrounds: 5"
+          },
+          {
+            "name": "src/demo/tests/test_utils.py::test_benchmark_sum_ints_time",
+            "value": 56826.53123162399,
+            "unit": "iter/sec",
+            "range": "stddev: 7.248103346682413e-7",
+            "extra": "mean: 17.597414065694366 usec\nrounds: 46297"
           }
         ]
       }
