@@ -20,8 +20,6 @@ jobs:
       event_name: ${{ github.event_name }}
       is_push_on_master: ${{ github.ref_name == 'master' && github.event_name == 'push' }}
     steps:
-      - name: Check env vars
-        run: echo ref_name "$ref_name" event_name "$event_name" is_push_on_master "$is_push_on_master"
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
       - name: Run benchmark
@@ -36,7 +34,7 @@ jobs:
           alert-threshold: 200%
           fail-on-alert: true
           comment-on-alert: true
-          alert-comment-cc-users: '@wesleyjia34' # TODO: conditionally set this
+          alert-comment-cc-users: '@wesleyjia34'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: false
       - name: Push benchmark results
