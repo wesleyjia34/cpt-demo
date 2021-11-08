@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - '**'
 
 permissions:
   contents: write
@@ -12,14 +15,20 @@ jobs:
   benchmark:
     name: Performance regression check
     runs-on: ubuntu-latest
+    env:
+      ref_name: ${{ env.GITHUB_REF_NAME }}
+      event_name: ${{ env.GITHUB_EVENT_NAME }}
+      is_push_on_master: ${{ env.GITHUB_REF_NAME == 'master' && env.GITHUB_EVENT_NAME == 'push' }}
     steps:
+      - name: Check env vars
+        run: echo ref_name "$ref_name" event_name "$event_name" is_push_on_master "$is_push_on_master"
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
       - name: Run benchmark
         run: |
           pip install -r requirements.txt
           pytest -k 'benchmark' --benchmark-json benchmark_output.json
-      - name: Store benchmark result
+      - name: Analyze benchmark results
         uses: benchmark-action/github-action-benchmark@v1
         with:
           tool: 'pytest'
@@ -30,5 +39,8 @@ jobs:
           alert-comment-cc-users: '@wesleyjia34'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: false
+      - name: Push benchmark results
+        if: ${{ env.is_push_on_master }}
+        run: echo ${GITHUB_WORKSPACE}
 
         
