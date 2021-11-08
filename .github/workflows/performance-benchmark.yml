@@ -16,9 +16,9 @@ jobs:
     name: Performance regression check
     runs-on: ubuntu-latest
     env:
-      ref_name: ${{ env.GITHUB_REF_NAME }}
-      event_name: ${{ env.GITHUB_EVENT_NAME }}
-      is_push_on_master: ${{ env.GITHUB_REF_NAME == 'master' && env.GITHUB_EVENT_NAME == 'push' }}
+      ref_name: ${{ github.ref_name }}
+      event_name: ${{ github.event_name }}
+      is_push_on_master: ${{ github.ref_name == 'master' && github.event_name == 'push' }}
     steps:
       - name: Check env vars
         run: echo ref_name "$ref_name" event_name "$event_name" is_push_on_master "$is_push_on_master"
